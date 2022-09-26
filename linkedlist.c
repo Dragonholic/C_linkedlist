@@ -20,33 +20,38 @@ void add(ll *list, int pos, int data){ // 리스트 추가 함수
     new->data =data; // 노드 뉴 data에 data 넣기
 
 
-    if(pos==0) {
+    if(list->len ==0) {
+        list->head = new;
+        list->tail = new;
+
+
+    }else if(pos==0) {
+        list->head->prev = new;
         new->next = list->head; // 노드 new의 next에 리스트의 head 넣기
-        new->prev = NULL; // 노드 prev를 NULL로
         list->head = new; // 리스트  해드를 new로 바꿔치기
 
-    }
-    else if(pos == list->len){
-        new->next = NULL; // next를 NULL
+
+
+    } else if(pos == list->len){
+        list->tail->next = new;
         new->prev = list->tail; // new의 prev를 tail로
         list->tail = new; // tail에 new를
-    }
 
-    else{
+    }else{
         node *tmp = list->head; // 노트 tmp생성 tmp에 해드 넣음
-
-        for(int i=0; i<pos-2; i++){
-            tmp = tmp->next; // next를 타고 pos-2자리까지 이동
+        for(int i=0; i<pos-1; i++){
+            tmp = tmp->next; // next를 타고 pos-1자리까지 이동
         }
-        new->prev = tmp->prev; //prev 값 대입
-        tmp = tmp->next;    // next타고 한칸 더이동
         new->next = tmp->next; // new next에 tmp next 값 넣기
         tmp->next = new; // 뉴를 next에 넣기 가리키게
+        tmp = tmp->next;
+        tmp->prev = new;
     }
+
 
     list->len = list->len+1;
 
-};
+}
 
 
 int get_size(ll *list) {
@@ -77,13 +82,19 @@ void set_at(ll *list, int pos, int data) {
 }
 
 
-void concat(ll *list1, ll *list2) {
-    node *tmp = list1->tail;
+void concat(ll *list, ll *list2) {
+    node *tmp = list->tail;
+
     tmp->next = list2->head;
-    tmp = list2->head;
-    tmp->prev = list1->tail;
-    list1->len += list2->len;
+
+    tmp=list2->head;
+    tmp->prev = list->tail;
+    list->tail = list2->tail;
+
+    list->len += list2->len;
 }
+
+
 
 
 int contains(ll *list, int data) {

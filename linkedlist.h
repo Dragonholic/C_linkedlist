@@ -25,7 +25,7 @@ int get_at(ll *list, int pos);
 
 void set_at(ll *list, int pos, int data);
 
-void concat(ll *list1, ll*list2);
+void concat(ll *list, ll*list2);
 
 void rem(ll *list, int pos);
 
