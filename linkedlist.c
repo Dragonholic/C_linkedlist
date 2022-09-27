@@ -100,7 +100,7 @@ void concat(ll *list, ll *list2) {
 int contains(ll *list, int data) {
     int pos = 0;
     node *tmp = list->head;
-    while(tmp != NULL) {
+    while(tmp != list->tail) {
         if (tmp->data == data) {
             return pos;
         }
@@ -119,12 +119,15 @@ void rem(ll *list, int pos) {
 
     if (pos == 0) {
         list->head = list->head->next;
+        list->head->prev = list->tail;
     }
-    else if(pos == list ->len){
+
+
+
+    else if(pos == (list ->len)-1) {
         list->tail = list->tail->prev;
+        list->tail->next = list->head;
     }
-
-
 
     else {
         node *tmp = list->head;
@@ -135,9 +138,14 @@ void rem(ll *list, int pos) {
     list->len = list->len - 1;
 }
 
-
-
-
+void pri_list(ll *list){
+    node *tmp =list->head;
+    for(int i=0; i<list->len; i++) {
+        printf("%d\t", tmp->data);
+        tmp = tmp->next;
+    }
+    printf("\n");
+}
 
 
 

@@ -31,7 +31,7 @@ void rem(ll *list, int pos);
 
 int contains(ll *list, int data);
 
-
+void pri_list(ll *list);
 
 
 #endif //WEDPRO_LINKEDLIST_H
