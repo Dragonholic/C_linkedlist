@@ -12,17 +12,23 @@ int main() {
     int n = 0;
     scanf("%d",&n);
 
+
     for (int i = 1; i <= n; ++i) {
         enqueue(&Q, i);
     }
 
 
 
-
-    for (int i = 0; i < 5; ++i) {
-
-
-        printf("%d\n", Q.data[i]);
+    while(Q.len!=1){
+    dequeue(&Q);
+    enqueue(&Q,dequeue(&Q));
     }
+
+    printf("%d", dequeue(&Q));
+
+
+
+
+
 
 }

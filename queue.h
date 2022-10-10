@@ -21,7 +21,7 @@ void enqueue(queue *q, int data);
 
 int dequeue(queue *q);
 
-
+void print_Q(queue *q);
 
 
 

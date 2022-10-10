@@ -19,15 +19,38 @@ void init_q(queue *q) {
 }
 
 void enqueue(queue *q, int data) {
-    if ((q->rear + 1) % 5 == q->front) {
-        printf("not allowed\n");
+    if ((q->rear + 1) %500000  == q->front) {
+        printf("not allowed(enq)\n");
         return;
     }
-    q->data[++q->rear % 5] = data;
+    q->rear++;
+    q->data[q->rear % 500000] = data;
+
     q->len++;
+
 }
 
 int dequeue(queue *q) {
+    if((q->rear + 1) %500000  == q->front ){
+        printf("not allowed(deq)\n");
+    } else{
+
     q->len--;
-    return q->data[++q->front % 5];
+
+        return q->data[++q->front % 500000];
+    }
+}
+
+
+void print_Q(queue *q){
+
+    for (int i = 0; i <= q->rear; ++i) {
+
+
+        printf("%d\n", q->data[i]);
+    }
+    printf("front: %d\n", q->front);
+    printf("rear: %d\n", q->rear);
+    printf("len: %d\n", q->len);
+
 }

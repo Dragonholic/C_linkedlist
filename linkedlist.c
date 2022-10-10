@@ -8,7 +8,7 @@
 #include "memory.h"
 
 
-void add(ll *list, int pos, int data){ // ë¦¬ìŠ¤íŠ¸ ì¶”ê°€ í•¨ìˆ˜
+void add(ll *list, int pos, int data){ // ¸®½ºÆ® Ãß°¡ ÇÔ¼ö
 
 
     if(pos> list->len){
@@ -16,8 +16,8 @@ void add(ll *list, int pos, int data){ // ë¦¬ìŠ¤íŠ¸ ì¶”ê°€ í•¨ìˆ˜
         return;
     }
 
-    node *new = malloc(sizeof(node)); // ë…¸ë“œ ë‰´ìƒì„±
-    new->data =data; // ë…¸ë“œ ë‰´ dataì— data ë„£ê¸°
+    node *new = malloc(sizeof(node)); // ³ëµå ´º»ý¼º
+    new->data =data; // ³ëµå ´º data¿¡ data ³Ö±â
 
 
     if(list->len ==0) {
@@ -27,23 +27,23 @@ void add(ll *list, int pos, int data){ // ë¦¬ìŠ¤íŠ¸ ì¶”ê°€ í•¨ìˆ˜
 
     }else if(pos==0) {
         list->head->prev = new;
-        new->next = list->head; // ë…¸ë“œ newì˜ nextì— ë¦¬ìŠ¤íŠ¸ì˜ head ë„£ê¸°
-        list->head = new; // ë¦¬ìŠ¤íŠ¸  í•´ë“œë¥¼ newë¡œ ë°”ê¿”ì¹˜ê¸°
+        new->next = list->head; // ³ëµå newÀÇ next¿¡ ¸®½ºÆ®ÀÇ head ³Ö±â
+        list->head = new; // ¸®½ºÆ®  ÇØµå¸¦ new·Î ¹Ù²ãÄ¡±â
 
 
 
     } else if(pos == list->len){
         list->tail->next = new;
-        new->prev = list->tail; // newì˜ prevë¥¼ tailë¡œ
-        list->tail = new; // tailì— newë¥¼
+        new->prev = list->tail; // newÀÇ prev¸¦ tail·Î
+        list->tail = new; // tail¿¡ new¸¦
 
     }else{
-        node *tmp = list->head; // ë…¸íŠ¸ tmpìƒì„± tmpì— í•´ë“œ ë„£ìŒ
+        node *tmp = list->head; // ³ëÆ® tmp»ý¼º tmp¿¡ ÇØµå ³ÖÀ½
         for(int i=0; i<pos-1; i++){
-            tmp = tmp->next; // nextë¥¼ íƒ€ê³  pos-1ìžë¦¬ê¹Œì§€ ì´ë™
+            tmp = tmp->next; // next¸¦ Å¸°í pos-1ÀÚ¸®±îÁö ÀÌµ¿
         }
-        new->next = tmp->next; // new nextì— tmp next ê°’ ë„£ê¸°
-        tmp->next = new; // ë‰´ë¥¼ nextì— ë„£ê¸° ê°€ë¦¬í‚¤ê²Œ
+        new->next = tmp->next; // new next¿¡ tmp next °ª ³Ö±â
+        tmp->next = new; // ´º¸¦ next¿¡ ³Ö±â °¡¸®Å°°Ô
         tmp = tmp->next;
         tmp->prev = new;
     }
@@ -115,13 +115,17 @@ struct node rem(ll *list, int pos) {
     node ret;
     memset(&ret, 0, sizeof(node));
 
-    if (pos < 0 || pos > list->len - 1) {
-        printf("not allowed\n");
+    if (pos < 0)  {
+        printf("not allowed( 0ÀÌÇÏÀÇ ÀÚ¸®)\n");
+        return ret;
+    }
+    if (pos > list->len - 1) {
+        printf("not allowed( ±æÀÌ ÀÌ»óÀÇ ÀÚ¸®)\n");
         return ret;
     }
 
     if (list->len == 0) {
-        printf("not allowed\n");
+        printf("not allowed(Áö¿ï°Ô¾øÀ½)\n");
         return ret;
         }
 
@@ -174,4 +178,8 @@ void add_last(ll *list, int data) {
 
 struct node rem_last(ll *list) {
     return rem(list, list->len - 1);
+
+}
+struct node rem_first(ll *list){
+    return rem(list, list->head);
 }

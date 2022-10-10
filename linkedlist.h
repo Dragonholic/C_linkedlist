@@ -37,5 +37,6 @@ int contains(ll *list, int data);
 
 void pri_list(ll *list);
 
+struct node rem_first(ll *list);
 
 #endif //WEDPRO_LINKEDLIST_H
