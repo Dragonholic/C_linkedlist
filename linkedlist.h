@@ -12,12 +12,14 @@ typedef struct node{
 }node;
 
 typedef struct {
-    struct node *head;
+    node *head;
     unsigned int len;
-    struct node *tail;
+    node *tail;
 }ll;
 
 void add(ll *list, int pos, int data);
+
+void add_last(ll *list, int data);
 
 int get_size(ll *list);
 
@@ -27,7 +29,9 @@ void set_at(ll *list, int pos, int data);
 
 void concat(ll *list, ll*list2);
 
-void rem(ll *list, int pos);
+struct node rem(ll *list, int pos);
+
+struct node rem_last(ll *list);
 
 int contains(ll *list, int data);
 

@@ -61,6 +61,18 @@ build CMakeFiles/Wedpro.dir/linkedlist.c.obj: C_COMPILER__Wedpro_Debug C$:/Users
   OBJECT_DIR = CMakeFiles\Wedpro.dir
   OBJECT_FILE_DIR = CMakeFiles\Wedpro.dir
 
+build CMakeFiles/Wedpro.dir/stack.c.obj: C_COMPILER__Wedpro_Debug C$:/Users/user/CLionProjects/Wedpro/stack.c || cmake_object_order_depends_target_Wedpro
+  DEP_FILE = CMakeFiles\Wedpro.dir\stack.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\Wedpro.dir
+  OBJECT_FILE_DIR = CMakeFiles\Wedpro.dir
+
+build CMakeFiles/Wedpro.dir/queue.c.obj: C_COMPILER__Wedpro_Debug C$:/Users/user/CLionProjects/Wedpro/queue.c || cmake_object_order_depends_target_Wedpro
+  DEP_FILE = CMakeFiles\Wedpro.dir\queue.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\Wedpro.dir
+  OBJECT_FILE_DIR = CMakeFiles\Wedpro.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Wedpro
@@ -69,7 +81,7 @@ build CMakeFiles/Wedpro.dir/linkedlist.c.obj: C_COMPILER__Wedpro_Debug C$:/Users
 #############################################
 # Link the executable Wedpro.exe
 
-build Wedpro.exe: C_EXECUTABLE_LINKER__Wedpro_Debug CMakeFiles/Wedpro.dir/main.c.obj CMakeFiles/Wedpro.dir/linkedlist.c.obj
+build Wedpro.exe: C_EXECUTABLE_LINKER__Wedpro_Debug CMakeFiles/Wedpro.dir/main.c.obj CMakeFiles/Wedpro.dir/linkedlist.c.obj CMakeFiles/Wedpro.dir/stack.c.obj CMakeFiles/Wedpro.dir/queue.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Wedpro.dir

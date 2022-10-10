@@ -1,11 +1,11 @@
 //
 // Created by yongluck on 2022-09-22.
 //
-
 #include "linkedlist.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+#include "memory.h"
 
 
 void add(ll *list, int pos, int data){ // 리스트 추가 함수
@@ -65,10 +65,10 @@ int get_at(ll *list, int pos){
         printf("not allowed\n");
     }
     else{
-    node *tmp = list->head;
-    for (int i=0; i<pos; i++) tmp = tmp->next;
-    return tmp->data;
-        
+        node *tmp = list->head;
+        for (int i=0; i<pos; i++) tmp = tmp->next;
+        return tmp->data;
+
     }
 
 };
@@ -111,32 +111,51 @@ int contains(ll *list, int data) {
 }
 
 
-void rem(ll *list, int pos) {
-    if(pos < 0 || pos > list->len -1) {
+struct node rem(ll *list, int pos) {
+    node ret;
+    memset(&ret, 0, sizeof(node));
+
+    if (pos < 0 || pos > list->len - 1) {
         printf("not allowed\n");
-        return;
+        return ret;
     }
+
+    if (list->len == 0) {
+        printf("not allowed\n");
+        return ret;
+        }
+
+        node *x = NULL;
+
 
     if (pos == 0) {
-        list->head = list->head->next;
-        list->head->prev = list->tail;
+            x = list->head;
+            list->head = list->head->next;
+            list->head->prev = list->tail;
+    } else if (list->len == 1) {
+            x = list->head;
+            list->head = NULL;
+            list->tail = NULL;
+    } else if (pos == (list->len) - 1) {
+            x = list->tail;
+            list->tail = list->tail->prev;
+            list->tail->next = list->head;
+    } else {
+            node *tmp = list->head;
+            for (int i = 0; i < pos - 1; i++) tmp = tmp->next;
+            tmp->next = tmp->next->next;
+
+            x = tmp->next;
+            tmp->next->next->prev = tmp;
+            tmp->next = tmp->next->next;
     }
 
-
-
-    else if(pos == (list ->len)-1) {
-        list->tail = list->tail->prev;
-        list->tail->next = list->head;
+        list->len = list->len - 1;
+        memcpy(&ret, x, sizeof(node));
+        free(x);
+        return ret;
     }
 
-    else {
-        node *tmp = list->head;
-        for(int i=0; i<pos-1; i++) tmp = tmp->next;
-        tmp->next = tmp->next->next;
-    }
-
-    list->len = list->len - 1;
-}
 
 void pri_list(ll *list){
     node *tmp =list->head;
@@ -148,5 +167,11 @@ void pri_list(ll *list){
 }
 
 
+void add_last(ll *list, int data) {
+    add(list, list->len, data);
+}
 
 
+struct node rem_last(ll *list) {
+    return rem(list, list->len - 1);
+}
