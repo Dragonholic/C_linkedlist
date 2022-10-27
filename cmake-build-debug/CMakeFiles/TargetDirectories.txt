@@ -1,3 +1,3 @@
-C:/Users/user/CLionProjects/Wedpro/cmake-build-debug/CMakeFiles/Wedpro.dir
-C:/Users/user/CLionProjects/Wedpro/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/user/CLionProjects/Wedpro/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/asdcv/CLionProjects/C_linkedlist/cmake-build-debug/CMakeFiles/C_linkedlist.dir
+C:/Users/asdcv/CLionProjects/C_linkedlist/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/asdcv/CLionProjects/C_linkedlist/cmake-build-debug/CMakeFiles/rebuild_cache.dir

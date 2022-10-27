@@ -12,7 +12,7 @@ typedef struct queue {
     int front;
     int rear;
     int len;
-    int data[500000];
+    int data;
 } queue;
 
 void init_q(queue *q);

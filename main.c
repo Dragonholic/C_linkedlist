@@ -4,31 +4,19 @@
 #include "linkedlist.h"
 #include "stack.h"
 #include "queue.h"
+#include "tree.h"============
+
+void traversal(void (*x)(trnode*t), trnode*t) {
+    x(t);
+}
+
 
 int main() {
-    queue Q;
-    init_q(&Q);
-
-    int n = 0;
-    scanf("%d",&n);
 
 
-    for (int i = 1; i <= n; ++i) {
-        enqueue(&Q, i);
-    }
-
-
-
-    while(Q.len!=1){
-    dequeue(&Q);
-    enqueue(&Q,dequeue(&Q));
-    }
-
-    printf("%d", dequeue(&Q));
-
-
-
-
-
-
+    traversal(inorder, &t1);
+    void (*x)(trnode*t) = inorder;
+    x=preorder;
+    x= postorder;
+    return 0;
 }
