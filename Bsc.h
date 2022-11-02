@@ -9,6 +9,7 @@
 void insert(trnode *root, int key, int data);
 int delete(trnode *root, int key);
 int search(trnode *root, int key);
+int find_close_number(trnode * root);
 
 
 

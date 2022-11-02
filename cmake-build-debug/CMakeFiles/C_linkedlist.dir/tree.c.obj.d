@@ -11,4 +11,6 @@ CMakeFiles/C_linkedlist.dir/tree.c.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- C:\Users\asdcv\CLionProjects\C_linkedlist\tree.h
+ C:\Users\asdcv\CLionProjects\C_linkedlist\tree.h \
+ C:\Users\asdcv\CLionProjects\C_linkedlist\queue.h \
+ C:\Users\asdcv\CLionProjects\C_linkedlist\linkedlist.h

@@ -152,6 +152,30 @@ Bsc.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_linkedlist.dir\build.make CMakeFiles/C_linkedlist.dir/Bsc.c.s
 .PHONY : Bsc.c.s
 
+TFT.obj: TFT.c.obj
+.PHONY : TFT.obj
+
+# target to build an object file
+TFT.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_linkedlist.dir\build.make CMakeFiles/C_linkedlist.dir/TFT.c.obj
+.PHONY : TFT.c.obj
+
+TFT.i: TFT.c.i
+.PHONY : TFT.i
+
+# target to preprocess a source file
+TFT.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_linkedlist.dir\build.make CMakeFiles/C_linkedlist.dir/TFT.c.i
+.PHONY : TFT.c.i
+
+TFT.s: TFT.c.s
+.PHONY : TFT.s
+
+# target to generate assembly for a file
+TFT.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_linkedlist.dir\build.make CMakeFiles/C_linkedlist.dir/TFT.c.s
+.PHONY : TFT.c.s
+
 linkedlist.obj: linkedlist.c.obj
 .PHONY : linkedlist.obj
 
@@ -284,6 +308,9 @@ help:
 	@echo ... Bsc.obj
 	@echo ... Bsc.i
 	@echo ... Bsc.s
+	@echo ... TFT.obj
+	@echo ... TFT.i
+	@echo ... TFT.s
 	@echo ... linkedlist.obj
 	@echo ... linkedlist.i
 	@echo ... linkedlist.s

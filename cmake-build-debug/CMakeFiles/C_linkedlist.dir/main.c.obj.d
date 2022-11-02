@@ -22,7 +22,5 @@ CMakeFiles/C_linkedlist.dir/main.c.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/errno.h \
  C:\Users\asdcv\CLionProjects\C_linkedlist\main.h \
- C:\Users\asdcv\CLionProjects\C_linkedlist\linkedlist.h \
- C:\Users\asdcv\CLionProjects\C_linkedlist\stack.h \
- C:\Users\asdcv\CLionProjects\C_linkedlist\queue.h \
- C:\Users\asdcv\CLionProjects\C_linkedlist\tree.h
+ C:\Users\asdcv\CLionProjects\C_linkedlist\tree.h \
+ C:\Users\asdcv\CLionProjects\C_linkedlist\TFT.h

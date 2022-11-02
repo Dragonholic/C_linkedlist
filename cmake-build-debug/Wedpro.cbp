@@ -82,6 +82,12 @@
 		<Unit filename="C:/Users/asdcv/CLionProjects/C_linkedlist/Bsc.h">
 			<Option target="C_linkedlist"/>
 		</Unit>
+		<Unit filename="C:/Users/asdcv/CLionProjects/C_linkedlist/TFT.c">
+			<Option target="C_linkedlist"/>
+		</Unit>
+		<Unit filename="C:/Users/asdcv/CLionProjects/C_linkedlist/TFT.h">
+			<Option target="C_linkedlist"/>
+		</Unit>
 		<Unit filename="C:/Users/asdcv/CLionProjects/C_linkedlist/linkedlist.c">
 			<Option target="C_linkedlist"/>
 		</Unit>
