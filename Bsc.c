@@ -5,27 +5,25 @@
 #include <malloc.h>
 #include "Bsc.h"
 
-void insert(trnode *root, int key, int data){
-    trnode *new = (trnode *)malloc(sizeof (trnode));
+trnode * new_node(int nkey, char* data){
+    trnode * tmp = (trnode *) malloc(sizeof (trnode));
+    tmp->key = nkey;
+    tmp->data = data;
+    tmp->left =tmp->right = NULL;
+    return tmp;
+}
+
+trnode * insert(trnode *root, int key, char* data){
 
     if(root == NULL){
-        root->data = data;
-        root->key = key;
+        return new_node(key,data);
 
     }else if(root->key < key){
-        if(root->right == NULL){
-            new->key = key;
-            new->data = data;
-            new-> parent = root;
-        }
-        insert(root->right, key, data);
+        root->right = insert(root->right, key, data);
     }else{
-        if(root->left == NULL){
-            new->key = key;
-            new->data = data;
-            new-> parent = root;
-        }
-        insert(root->left, key, data);}
+        root->left = insert(root->left, key, data);}
+
+    return  root;
 }
 
 int find_close_number(trnode * root){
@@ -39,6 +37,7 @@ int find_close_number(trnode * root){
 
 
 int delete(trnode *root, int key){
+    trnode *tmp = (trnode *)malloc(sizeof (trnode));
     if(root == NULL){
         printf("트리에 값이 없습니다.");
         return -1;
@@ -57,7 +56,7 @@ int delete(trnode *root, int key){
                 root->left->parent = root->parent;
                 free(root);
             }else {
-                trnode * tmp = find_close_number(root->right);
+                tmp = find_close_number(root->right);
                 root->key = tmp->key;
                 root->right = delete(root->right,tmp->key);
             }
@@ -73,4 +72,14 @@ int delete(trnode *root, int key){
 
 int search(trnode *root, int key){
 
+}
+
+void print_tree(trnode * root){
+    if(root == NULL){
+        return;
+    }
+
+    print_tree(root->left);
+    printf("[%d] ", root->key);
+    print_tree(root->right);
 }

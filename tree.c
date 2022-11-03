@@ -7,8 +7,7 @@
 
 void preorder(trnode * t) {
     if (t == NULL) return;
-    printf("%d ", t->data);
-
+    printf("[%s %d]", t->data,t->key);
     preorder(t->left);
     preorder(t->right);
 }
@@ -16,7 +15,7 @@ void preorder(trnode * t) {
 void inorder(trnode*t){
     if (t == NULL) return;
     inorder(t->left);
-    printf("%d", t->data);
+    printf("[%s %d]", t->data,t->key);
     inorder(t->right);
 
 }
@@ -26,7 +25,7 @@ void postorder(trnode*t){
     postorder(t->left);
 
     postorder(t->right);
-    printf("%d", t->data);
+    printf("[%s %d]", t->data,t->key);
 
 }
 

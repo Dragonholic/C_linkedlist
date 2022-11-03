@@ -7,7 +7,7 @@
 
 typedef struct trnode {
     int key;
-    int data;
+    char* data;
     struct trnode * left;
     struct trnode * right;
     struct trnode * parent;
