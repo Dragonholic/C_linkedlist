@@ -7,18 +7,23 @@
 #include "tree.h"
 
 typedef struct item{
-    char tem1;
-    char tem2;
-    char tem3;
+    char* tem1;
+    char* tem2;
+    char* tem3;
 }item;
 
+typedef struct deck{
+    struct champion *c;
+    struct item *i;
+}deck;
 
 typedef struct champion{
     int cost;
-    struct item *citem;
+    struct item *i;
 }champion;
 
 void declare_champ(champion *C,int c);
+void find_deck(trnode*root, int key);
 
 
 

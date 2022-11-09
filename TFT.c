@@ -11,3 +11,6 @@ void declare_champ(champion *C,int c){
     C->cost = c;
 
 }
+void find_deck(trnode*root, int key){
+
+}

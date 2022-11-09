@@ -14,11 +14,24 @@ typedef struct trnode {
 
 }trnode;
 
+typedef struct
+{
+    trnode* root;
+};
+
 
 
 void preorder(trnode * t);
 void inorder(trnode*t);
 void postorder(trnode*t);
 void levelorder(trnode*t);
+
+int isExternal(trnode* w);
+void expandExternal(trnode* w);
+trnode* sibling(trnode* z);
+trnode* treeSearch(trnode* v, int k);
+trnode* treetrue(trnode* v, int k);
+
+
 
 #endif //MAIN_C_TREE_H
