@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "tree.h"
 #include "queue.h"
 
@@ -57,8 +58,23 @@ trnode* treeSearch(trnode* v, int k){
         return treeSearch(v->right, k);
 }
 
+
+
+trnode* search(trnode* v, int k) {
+    trnode *p =v;
+    while (p != NULL){
+        if (p->key == k)
+            return p->data;
+        else if(k < v->key)
+            return search(v->left, k);
+        else
+            return search(v->right, k);
+    }
+    return -1;
+}
+
 trnode* treetrue(trnode* v, int k){
-    if(treeSearch(v,k) == -1){
+    if(search(v,k) == -1){
         return -1;
     }
 }

@@ -77,3 +77,12 @@
 46	200	6897094360724028	CMakeFiles/C_linkedlist.dir/TFT.c.obj	b7e5d0ff94ba79d
 34	211	6897094360784086	CMakeFiles/C_linkedlist.dir/tree.c.obj	9a1e53efedd775c4
 211	511	6897094363466525	C_linkedlist.exe	e7383652e9af4b43
+3	133	6897787765565992	CMakeFiles/C_linkedlist.dir/main.c.obj	b68a8c9bbfa695b4
+13	134	6897787765565992	CMakeFiles/C_linkedlist.dir/tree.c.obj	9a1e53efedd775c4
+34	135	6897787765565992	CMakeFiles/C_linkedlist.dir/TFT.c.obj	b7e5d0ff94ba79d
+24	136	6897787765565992	CMakeFiles/C_linkedlist.dir/Bsc.c.obj	4fbae28ec6dca6ec
+137	427	6897787768172277	C_linkedlist.exe	e7383652e9af4b43
+2	100	6897788520973217	CMakeFiles/C_linkedlist.dir/tree.c.obj	9a1e53efedd775c4
+100	268	6897788522424539	C_linkedlist.exe	e7383652e9af4b43
+2	101	6897788952454002	CMakeFiles/C_linkedlist.dir/tree.c.obj	9a1e53efedd775c4
+101	262	6897788953842673	C_linkedlist.exe	e7383652e9af4b43

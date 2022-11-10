@@ -26,6 +26,8 @@ void inorder(trnode*t);
 void postorder(trnode*t);
 void levelorder(trnode*t);
 
+trnode* search(trnode* v, int k);
+
 int isExternal(trnode* w);
 void expandExternal(trnode* w);
 trnode* sibling(trnode* z);

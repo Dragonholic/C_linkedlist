@@ -42,9 +42,7 @@ int main() {
     scanf("%d", &g);
 
     if(treetrue(root, g) != -1){
-        printf("%s µ¦", treeSearch(root, g));
-
-
+        printf("%s µ¦", search(root, g));
 
 
 
